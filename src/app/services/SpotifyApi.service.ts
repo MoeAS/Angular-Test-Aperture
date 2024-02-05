@@ -5,17 +5,18 @@ import { Observable } from 'rxjs';
 import { Artist } from '../models/albums - artists.interface';
 import { Albums } from '../models/search.interface';
 import { AlbumDetail } from '../models/albums.interface';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyApiService {
 
-  currentUrl = 'http://localhost:4200';
+  currentUrl = environment.url;
 
   public credentials = {
-    clientId: '9a983f43786840b3b0f6613fa672b53f',
-    clientSecret: '4e19c7e22dfc40f7a32d0ecc74ded04f',
+    clientId: environment.client_id,
+    clientSecret: environment.client_secret,
     accessToken: ''
   }
 
