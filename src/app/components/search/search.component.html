@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div class="search__input-container">
+  <input
+    #searchTerm
+    class="search__input"
+    type="text"
+    name="searchTerm"
+    id="searchTerm"
+    placeholder="search for your favorite arist ..."
+    (keyup)="modelChange(searchTerm.value)"
+  />
+</div>
+
+<app-loading *ngIf="loading"></app-loading>

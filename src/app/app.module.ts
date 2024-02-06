@@ -1,6 +1,5 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './components/shared/side-bar/side-bar.component';
@@ -13,15 +12,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StoreModule } from '@ngrx/store';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { SpotifyApiService } from './services/SpotifyApi.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent
+    SideBarComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     MatSnackBarModule,
     StoreModule.forRoot(),
@@ -33,7 +34,7 @@ import { SpotifyApiService } from './services/SpotifyApi.service';
     provideAnimationsAsync(),
     SpotifyApiService,
     LoginGuard,
-    MainGuard,
+    MainGuard
   ]
 })
 export class AppModule { }

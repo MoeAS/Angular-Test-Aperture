@@ -1,0 +1,30 @@
+.search__input-container {
+  width: 100%;
+  input {
+    font: bold 1.2rem "Circular";
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    // border: 1px solid white;
+    &:focus {
+      outline: 2px solid white;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search__input-container {
+    margin-top: 10px;
+    input {
+      font: italic 1.2rem "Circular";
+      text-align: center;
+      width: 300px;
+      height: 30px;
+    }
+  }
+}

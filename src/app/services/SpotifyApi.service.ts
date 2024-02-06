@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthToken } from '../models/authtoken.interface';
 import { Observable } from 'rxjs';
 import { Artist } from '../models/albums - artists.interface';
-import { Albums } from '../models/search.interface';
+import { Albums, SearchArtist } from '../models/search.interface';
 import { AlbumDetail } from '../models/albums.interface';
 import { environment } from 'src/environments/environment.development';
 
@@ -110,6 +110,21 @@ export class SpotifyApiService {
 
   getArtistInfo(id: string): Observable<Artist> {
     return this.http.get<Artist>('https://api.spotify.com/v1/artists/' + id);
+  }
+
+  getArtistsSearched(
+    url: string | null,
+    termSearched: string | null
+  ): Observable<SearchArtist> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    if (!url) {
+      return this.http.get<SearchArtist>(
+        `https://api.spotify.com/v1/search?q=%22${termSearched}%22&type=artist&limit=8`,
+        options
+      );
+    }
+    return this.http.get<SearchArtist>(url, options);
   }
   
   getArtistAlbums(id: string | null, url: string | null): Observable<Albums> {

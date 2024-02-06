@@ -1,0 +1,12 @@
+.mat-mdc-dialog-content {
+    max-height: 90vh;
+}
+.mat-mdc-dialog-actions {
+    justify-content: end;
+}
+
+@media screen and (max-width: 500px) {
+    .mat-mdc-dialog-content {
+        max-height: 550px;
+    }
+}
