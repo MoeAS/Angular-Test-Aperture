@@ -20,6 +20,11 @@ export const routes: Routes = [
     loadChildren: () => import('./components/search/search.module').then((m) => m.SearchModule),
     canActivate: [MainGuard],
   },
+  {
+    path: 'artist-info/:id',
+    loadChildren: () => import('./components/artist-info/artist-info.module').then((m) => m.ArtistInfoModule),
+    canActivate: [MainGuard],
+  },
   // {
   //   path: 'not-found',
   //   loadChildren: () => import('./components/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),

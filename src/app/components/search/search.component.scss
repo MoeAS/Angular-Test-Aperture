@@ -17,11 +17,17 @@
   }
 }
 
+h1 {
+    color: white;
+    text-align-last: center;
+    margin-top: 10%;
+}
+
 @media only screen and (max-width: 768px) {
   .search__input-container {
     margin-top: 10px;
     input {
-      font: italic 1.2rem "Circular";
+      font: bold 1.2rem "Circular";
       text-align: center;
       width: 300px;
       height: 30px;

@@ -1,0 +1,17 @@
+<div class="artist__container">
+    <div class="artist__card">
+        <img [src]="artist_info.images.length == 0 ? '../../../assets/images/noimage.jpg' : artist_info.images[0].url" [alt]="artist_info.name">
+        <p class="artist__name__text">{{ artist_info.name }}</p>
+        <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [color]="'#1ed760'"></ngx-stars>
+    </div>
+    <div class="followers__div">
+        <p class="followers__text"> {{ artist_info.followers.total }} Followers</p>
+    </div>
+</div>
+
+<div class="artist__albums__container">
+    <h1 class="artist__albums__title">Albums</h1>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-artist-info-album-cards *ngIf="!loading" [artist_albums]="artist_albums"></app-artist-info-album-cards>
+    <p *ngIf="!loading && artist_albums.items.length==0 && artist_albums.limit!=0">Check again later!</p>
+</div>

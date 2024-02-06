@@ -1,0 +1,12 @@
+<div class="container" *ngIf="artists">
+  <div class="row">
+    <div class="col" *ngFor="let artist of artists.items; let i = index">
+      <div class="card" (click)="goToArtistPage(artist.id)">
+        <div class="main">
+          <img class="image" [src]="artist.images.length == 0 ? '../../../assets/images/noimage.jpg' : artist.images[0].url" />
+          <p class="text">{{ artist.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

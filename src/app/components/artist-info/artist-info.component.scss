@@ -1,0 +1,45 @@
+.artist__container {
+  background-color: black;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-between;
+
+  .artist__card {
+    img {
+      width: 200px;
+      margin-top: 30px;
+
+      &:hover {
+        border: 1px solid #ffffff44;
+        box-shadow: 0 7px 50px 10px #000000aa;
+        transition: 0.4s;
+        transform: scale(1.25);
+      }
+    }
+
+    .artist__name__text {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .followers__div {
+    place-self: end;
+  }
+
+  .followers__text {
+    color: white;
+    margin-right: 10px;
+  }
+}
+
+.artist__albums__container {
+  .artist__albums__title {
+    color: white;
+    font-weight: bold;
+    margin: 30px 0px 0px 30px;
+  }
+}

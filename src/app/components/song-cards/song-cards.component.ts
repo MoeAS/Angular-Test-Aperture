@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NewReleases } from 'src/app/models/albums - artists.interface';
 
 @Component({
   selector: 'app-song-cards',
-  standalone: true,
-  imports: [],
   templateUrl: './song-cards.component.html',
   styleUrl: './song-cards.component.scss'
 })
 export class SongCardsComponent {
-
+  @Input() songs!: NewReleases;
+  
+  constructor () {}
 }

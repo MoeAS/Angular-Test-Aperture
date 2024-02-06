@@ -4,18 +4,21 @@ import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from '../home/core.module';
-import { LoadingComponent } from '../loading/loading.component';
+import { ArtistCardsComponent } from '../artist-cards/artist-cards.component';
+import { NoImagePipe } from 'src/app/pipes/noimage.pipe';
+import { LoadingModule } from '../loading/loading.module';
 
 
 
 @NgModule({
-  declarations: [SearchComponent, LoadingComponent],
+  declarations: [SearchComponent, ArtistCardsComponent, NoImagePipe],
   imports: [
     SearchRoutingModule,
     CommonModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    LoadingModule
   ],
-  exports: [SearchComponent, LoadingComponent]
+  exports: [SearchComponent, ArtistCardsComponent, NoImagePipe]
 })
 export class SearchModule { }

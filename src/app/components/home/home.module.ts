@@ -2,22 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { MainGuard } from 'src/app/guards/main.guard';
 import { HttpClientModule } from '@angular/common/http';
-import { SpotifyApiService } from 'src/app/services/SpotifyApi.service';
 import { CoreModule } from './core.module';
-
-
+import { SongCardsComponent } from '../song-cards/song-cards.component';
+import { LoadingModule } from '../loading/loading.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, SongCardsComponent],
   imports: [
     HomeRoutingModule,
     CommonModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    LoadingModule
   ],
 
-  exports: [HomeComponent]
+  exports: [HomeComponent, SongCardsComponent]
 })
 export class HomeModule { }

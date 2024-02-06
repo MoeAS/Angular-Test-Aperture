@@ -1,0 +1,22 @@
+<div class="container" *ngIf="artist_albums">
+  <div class="row">
+    <div class="col" *ngFor="let album of artist_albums.items; let i = index">
+      <div class="card">
+        <div class="main">
+          <img
+            class="image"
+            [src]="
+              album.images.length == 0
+                ? '../../../assets/images/noimage.jpg'
+                : album.images[0].url
+            "
+          />
+          <p class="text">{{ album.name }}</p>
+          <p class="text" *ngIf="album.release_date">
+            released on {{ album.release_date }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

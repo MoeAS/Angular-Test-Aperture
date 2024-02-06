@@ -2,30 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthToken } from '../models/authtoken.interface';
 import { Observable } from 'rxjs';
-import { Artist } from '../models/albums - artists.interface';
+import { Artist, NewReleases } from '../models/albums - artists.interface';
 import { Albums, SearchArtist } from '../models/search.interface';
 import { AlbumDetail } from '../models/albums.interface';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SpotifyApiService {
-
   currentUrl = environment.url;
 
   public credentials = {
     clientId: environment.client_id,
     clientSecret: environment.client_secret,
-    accessToken: ''
-  }
+    accessToken: '',
+  };
 
   credential = btoa(
     `${this.credentials.clientId}:${this.credentials.clientSecret}`
   );
 
   public configURL = {
-
     authorize:
       'https://accounts.spotify.com/en/authorize?client_id=' +
       this.credentials.clientId +
@@ -34,16 +32,16 @@ export class SpotifyApiService {
       '&redirect_uri=' +
       encodeURIComponent(`${this.currentUrl}/login/callback`) +
       '&expires_in=3600',
+  };
 
-  }
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getQuery(query: string) {
-  
     const url: string = `https://api.spotify.com/v1/${query}`;
 
-    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.credentials.accessToken});
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.credentials.accessToken,
+    });
 
     return this.http.get(url, { headers });
   }
@@ -126,21 +124,28 @@ export class SpotifyApiService {
     }
     return this.http.get<SearchArtist>(url, options);
   }
-  
+
   getArtistAlbums(id: string | null, url: string | null): Observable<Albums> {
     if (!url) {
       return this.http.get<Albums>(
-        `https://api.spotify.com/v1/artists/${id}/albums?limit=9`
+        `https://api.spotify.com/v1/artists/${id}/albums`
       );
     } else {
       return this.http.get<Albums>(url);
     }
   }
 
-  getAlbumDetail(id: string): Observable<AlbumDetail> {
+  getNewReleases(url: string | null): Observable<NewReleases> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const options = { headers: headers };
-    return this.http.get<AlbumDetail>(`https://api.spotify.com/v1/albums/${id}`, options);
+
+    if (!url) {
+      return this.http.get<NewReleases>(
+        `https://api.spotify.com/v1/browse/new-releases?country=AR&offset=0`,
+        options
+      );
+    }
+    return this.http.get<NewReleases>(url, options);
   }
 
   LogOut() {

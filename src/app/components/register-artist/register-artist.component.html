@@ -1,5 +1,5 @@
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>
+  <button mat-button mat-dialog-close (click)="closeRegisterArtistDialog()">
     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
       <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
       <path
@@ -11,7 +11,7 @@
 <div mat-dialog-content>
   <div>
     <form
-      
+      [formGroup]="ArtistForm"
       id="artistForm"
       class="log-form"
       (ngSubmit)="onSubmit()"
@@ -127,13 +127,14 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <strong>Profile Picture</strong>
         <input
-          type="text"
+          type="file"
           id="profilePicture"
           formControlName="profilePicture"
           class="form-control"
           placeholder="Profile Picture"
           required=""
           data-error="Please enter your profile picture"
+          (change)="onProfilePicPicked($event)"
         />
         <span
           *ngIf="
@@ -153,19 +154,17 @@
           formControlName="stageName"
           class="form-control"
           placeholder="Stage Name"
-          required=""
           data-error="Please enter your stage name"
         />
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12">
         <strong>Artist Backstory</strong>
         <textarea
-          id="message"
-          formControlName="message"
+          id="artistBackstory"
+          formControlName="artistBackstory"
           class="form-control"
-          placeholder="Message"
-          required=""
-          data-error="Please enter your message"
+          placeholder="Artist Backstory"
+          data-error="Please enter your Artist Backstory"
         ></textarea>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -175,7 +174,6 @@
           id="startingDate"
           formControlName="startingDate"
           class="form-control"
-          required=""
           data-error="Please enter your starting date"
         />
       </div>

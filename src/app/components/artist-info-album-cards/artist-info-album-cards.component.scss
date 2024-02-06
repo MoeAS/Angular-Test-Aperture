@@ -1,15 +1,11 @@
 .card {
   user-select: none;
   width: 300px;
-  height: 337px;
+  height: 370px;
   margin: 5rem auto;
   border: 1px solid #ffffff22;
   background-color: #1ed760;
-  background: linear-gradient(
-    0deg,
-    #191919 0%,
-    #1ed760 100%
-  );
+  background: linear-gradient(0deg, #191919 0%, #1ed760 100%);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 0.7rem;
   backdrop-filter: blur(7px);

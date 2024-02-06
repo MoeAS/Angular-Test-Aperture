@@ -11,3 +11,7 @@
 </div>
 
 <app-loading *ngIf="loading"></app-loading>
+
+<app-artist-cards *ngIf="!loading" [artists]="artists"></app-artist-cards>
+
+<h1 *ngIf="!loading && artists.items.length==0 && artists.limit!=0">Please search again!</h1>

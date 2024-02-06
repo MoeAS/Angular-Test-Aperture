@@ -12,7 +12,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StoreModule } from '@ngrx/store';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { SpotifyApiService } from './services/SpotifyApi.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { LoadingModule } from './components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,17 @@ import { FormsModule } from '@angular/forms';
     SideBarComponent,
   ],
   imports: [
+    CommonModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
     StoreModule.forRoot(),
-    CoreModule
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LoadingModule
   ],
   bootstrap: [AppComponent],
   providers: [

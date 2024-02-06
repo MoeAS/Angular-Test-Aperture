@@ -10,7 +10,7 @@ import { SpotifyApiService } from 'src/app/services/SpotifyApi.service';
 })
 export class SearchComponent {
   searchTerm = '';
-  artists?: Artists;
+  artists!: Artists;
   loading: boolean;
 
   private artist_subscription: Subscription | null;
@@ -18,6 +18,15 @@ export class SearchComponent {
   constructor(private auth: SpotifyApiService) {
     this.artist_subscription = null;
     this.loading = false;
+    this.artists = {
+      href: '',
+      items: [],
+      limit: 0,
+      next: null,
+      offset: 0,
+      previous: null,
+      total: 0,
+    };
   }
 
   modelChange(str: string): void {
@@ -27,11 +36,13 @@ export class SearchComponent {
   }
 
   searchArtists() {
-    this.artist_subscription = this.auth.getArtistsSearched(null, this.searchTerm).subscribe((resp) => {
-      this.artists = resp.artists;
-      this.loading = false;
-      console.log(this.artists);
-    });
+    this.artist_subscription = this.auth
+      .getArtistsSearched(null, this.searchTerm)
+      .subscribe((resp) => {
+        this.artists = resp.artists;
+        this.loading = false;
+        console.log(this.artists);
+      });
   }
 
   ngOnDestroy() {
