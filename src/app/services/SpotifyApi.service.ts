@@ -128,7 +128,8 @@ export class SpotifyApiService {
   getArtistAlbums(id: string | null, url: string | null): Observable<Albums> {
     if (!url) {
       return this.http.get<Albums>(
-        `https://api.spotify.com/v1/artists/${id}/albums`
+        // `https://api.spotify.com/v1/artists/${id}/albums?limit=9`
+        `https://api.spotify.com/v1/artists/${id}/albums` // remove limiter
       );
     } else {
       return this.http.get<Albums>(url);
@@ -141,7 +142,8 @@ export class SpotifyApiService {
 
     if (!url) {
       return this.http.get<NewReleases>(
-        `https://api.spotify.com/v1/browse/new-releases?country=AR&offset=0`,
+        // `https://api.spotify.com/v1/browse/new-releases?country=AR&offset=0&limit=12`,
+        `https://api.spotify.com/v1/browse/new-releases?country=AR&offset=0`,  // remove limiter
         options
       );
     }
