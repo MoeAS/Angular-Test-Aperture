@@ -8,7 +8,9 @@
   .artist__card {
     img {
       width: 200px;
+      height: 200px;
       margin-top: 30px;
+      object-fit: cover;
 
       &:hover {
         border: 1px solid #ffffff44;

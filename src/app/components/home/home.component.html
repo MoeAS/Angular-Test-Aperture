@@ -3,6 +3,6 @@
     Featured Albums
 </h1>
 <app-loading *ngIf="loading"></app-loading>
-<app-song-cards *ngIf="!loading" [songs]="albums"></app-song-cards>
+<app-featured-albums-cards *ngIf="!loading" [featuredAlbums]="albums"></app-featured-albums-cards>
 
 <p *ngIf="!loading && albums.albums.items.length==0 && albums.albums.limit!=0">Check again later!</p>

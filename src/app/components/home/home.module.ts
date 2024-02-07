@@ -4,11 +4,11 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core.module';
-import { SongCardsComponent } from '../song-cards/song-cards.component';
+import { FeaturedAlbumsComponent } from '../featured-albums-cards/featured-albums-cards.component';
 import { LoadingModule } from '../loading/loading.module';
 
 @NgModule({
-  declarations: [HomeComponent, SongCardsComponent],
+  declarations: [HomeComponent, FeaturedAlbumsComponent],
   imports: [
     HomeRoutingModule,
     CommonModule,
@@ -17,6 +17,6 @@ import { LoadingModule } from '../loading/loading.module';
     LoadingModule
   ],
 
-  exports: [HomeComponent, SongCardsComponent]
+  exports: [HomeComponent, FeaturedAlbumsComponent]
 })
 export class HomeModule { }

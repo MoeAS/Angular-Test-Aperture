@@ -1,0 +1,20 @@
+<div class="container" *ngIf="featuredAlbums">
+  <div class="row">
+    <div class="col" *ngFor="let featuredAlbum of featuredAlbums.albums.items; let i = index">
+      <div class="card">
+        <div class="main">
+          <img
+            class="image"
+            [src]="
+              featuredAlbum.images.length == 0
+                ? '../../../assets/images/noimage.jpg'
+                : featuredAlbum.images[0].url
+            "
+          />
+          <p class="text">{{ featuredAlbum.name }}</p>
+          <p class="text" *ngIf="featuredAlbum.release_date">released on {{ featuredAlbum.release_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
