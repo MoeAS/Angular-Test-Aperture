@@ -1,12 +1,90 @@
-.mat-mdc-dialog-content {
-    max-height: 90vh;
+::ng-deep
+  .cdk-overlay-container
+  .cdk-overlay-backdrop.cdk-overlay-dark-backdrop.cdk-overlay-backdrop-showing
+  .cdk-global-overlay-wrapper
+  .cdk-overlay-pane:has(.my-dialog-panel) {
+  overflow-y: scroll;
 }
-.mat-mdc-dialog-actions {
-    justify-content: end;
+
+::ng-deep .cdk-overlay-container:has(.my-dialog-panel) {
+  overflow-y: scroll;
+}
+
+.mat-mdc-dialog-content {
+  max-height: 90vh;
 }
 
 @media screen and (max-width: 500px) {
-    .mat-mdc-dialog-content {
-        max-height: 550px;
-    }
+  .mat-mdc-dialog-content {
+    max-height: 550px;
+  }
+}
+
+.padding {
+  padding: 10px;
+}
+
+.warning {
+  color: red;
+}
+
+input.ng-invalid.ng-touched.form-control.ng-pristine {
+  border: 1px solid #c0392b;
+}
+
+textarea.ng-invalid.ng-touched.form-control.ng-pristine {
+  border: 1px solid #c0392b;
+}
+
+.login-form .form-control {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 7px 15px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  min-height: 36px;
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  border: 1px solid #f5f5f5;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  border-radius: 0px;
+  background: #1ed760;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: left;
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+}
+
+.submit-btn:hover {
+  background-color: #ffffff;
+  color: #1ed760;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.albums__title {
+    font-size: 16px;
+    margin: 10px 0 0 10px;
 }

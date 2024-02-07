@@ -1,4 +1,4 @@
-<div mat-dialog-actions>
+<div mat-dialog-actions style="align-self: self-end !important">
   <button mat-button mat-dialog-close (click)="closeRegisterArtistDialog()">
     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
       <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -16,7 +16,7 @@
       class="log-form"
       (ngSubmit)="onSubmit()"
     >
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>First Name</strong>
         <input
           type="text"
@@ -37,7 +37,7 @@
           Please enter a valid first name!
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Last Name</strong>
         <input
           type="text"
@@ -58,7 +58,7 @@
           Please enter a valid last name!
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Email</strong>
         <input
           type="email"
@@ -78,7 +78,7 @@
           Please enter a valid email!
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Date of Birth</strong>
         <input
           type="date"
@@ -103,7 +103,7 @@
           Must be over 25 years old.
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Phone Number</strong>
         <input
           type="number"
@@ -124,7 +124,7 @@
           Please enter a valid Phone Number!
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Profile Picture</strong>
         <input
           type="file"
@@ -146,7 +146,7 @@
           Please enter a valid profile picture!
         </span>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Stage Name</strong>
         <input
           type="text"
@@ -157,7 +157,7 @@
           data-error="Please enter your stage name"
         />
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Artist Backstory</strong>
         <textarea
           id="artistBackstory"
@@ -167,7 +167,7 @@
           data-error="Please enter your Artist Backstory"
         ></textarea>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <strong>Starting Date</strong>
         <input
           type="date"
@@ -177,7 +177,51 @@
           data-error="Please enter your starting date"
         />
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <strong class="albums__title">Albums</strong>
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
+        <strong>Album Picture</strong>
+        <input
+          type="file"
+          id="albumPicture"
+          class="form-control"
+          placeholder="Album Picture"
+          data-error="Please enter your album picture"
+          (change)="onAlbumPicPicked($event)"
+        />
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
+        <strong>Album Date</strong>
+        <input
+          type="date"
+          id="albumDate"
+          class="form-control"
+          data-error="Please enter your album date"
+          (change)="albumDateKey($event)"
+        />
+      </div>
+      <strong class="albums__title">Songs</strong>
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
+        <strong>Song Name</strong>
+        <input
+          type="text"
+          id="songName"
+          class="form-control"
+          placeholder="Song Name"
+          data-error="Please enter your song name"
+          (keyup)="songNameKey($event)"
+        />
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
+        <strong>Song Duration</strong>
+        <input
+          type="number"
+          id="songDuration"
+          class="form-control"
+          data-error="Please enter your song duration"
+          (keyup)="songDurationKey($event)"
+        />
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 padding">
         <button
           [disabled]="
             !calculateAge(ArtistForm.value.dob) ||
@@ -190,9 +234,9 @@
           "
           type="submit"
           id="submit"
-          class="slide-btn login-btn"
+          class="submit-btn"
         >
-          Apply
+          Submit
         </button>
       </div>
     </form>

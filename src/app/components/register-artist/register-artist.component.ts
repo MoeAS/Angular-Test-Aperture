@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
+  FormArray,
+  FormBuilder,
   FormControl,
   FormGroup,
   FormsModule,
@@ -21,13 +23,23 @@ export class RegisterArtistComponent {
   ArtistForm!: FormGroup;
   mobNumberPattern =
     '^(961(3|70|71|76|78|79|81)|(03|70|71|76|78|79|81))[0-9]{6}$';
+  albumDate: String = '';
+  songName: String = '';
+  songDuration: number = 0;
+  albumPic!: File;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.ArtistForm = new FormGroup({
-      firstName: new FormControl(null, [Validators.required]),
-      lastName: new FormControl(null, [Validators.required]),
+      firstName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      lastName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       dob: new FormControl(null, [Validators.required]),
       phoneNumber: new FormControl(null, [Validators.required]),
@@ -35,8 +47,20 @@ export class RegisterArtistComponent {
       stageName: new FormControl(null),
       artistBackstory: new FormControl(null),
       startingDate: new FormControl(null),
-      albums: new FormControl(null),
+      albums: new FormArray([]),
     });
+  }
+
+  albumDateKey(event: any) {
+    this.albumDate = event.target.value
+  }
+
+  songNameKey(event: any) {
+    this.songName = event.target.value
+  }
+
+  songDurationKey(event: any) {
+    this.songDuration = event.target.value
   }
 
   closeRegisterArtistDialog() {
@@ -56,10 +80,18 @@ export class RegisterArtistComponent {
 
   onAlbumPicPicked(event: Event) {
     const file = (event.target as HTMLInputElement).files![0];
-    this.ArtistForm.patchValue({ profilePicture: file });
+    // this.ArtistForm.patchValue({ profilePicture: file });
+    this.albumPic = file
   }
 
   onSubmit() {
+    this.ArtistForm.value.albums.push({ albumPicture: this.albumPic });
+    this.ArtistForm.value.albums.push({ albumDate: this.albumDate });
+    this.ArtistForm.value.albums.push({Songs: [{
+      songName: this.songName,
+      songDuration: this.songDuration
+    }]});
     console.log('Artist Registration: ', this.ArtistForm.value);
+    this.closeRegisterArtistDialog();
   }
 }
