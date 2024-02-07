@@ -41,7 +41,6 @@ export class SearchComponent {
       .subscribe((resp) => {
         this.artists = resp.artists;
         this.loading = false;
-        console.log(this.artists);
       });
   }
 

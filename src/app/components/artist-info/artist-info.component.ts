@@ -83,7 +83,6 @@ export class ArtistInfoComponent {
       .getArtistInfo(this.artistId)
       .subscribe((resp) => {
         this.artist_info = resp;
-        console.log("artist_info", this.artist_info);
         this.calculateStarRating();
       });
   }

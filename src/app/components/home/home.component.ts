@@ -39,7 +39,6 @@ export class HomeComponent {
       .subscribe((resp) => {
         this.albums.albums = resp.albums;
         this.loading = false;
-        console.log(this.albums);
       });
   }
 
