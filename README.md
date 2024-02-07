@@ -18,6 +18,24 @@ to run the application just run `ng serve`, if you need to change the port just 
 
 YOU NEED A SPOTIFY ACCOUNT TO LOG IN!
 
+## Project Screenshot Preview
+
+# Home
+
+![Screenshot 2024-02-07 052739](https://github.com/MoeAS/Angular-Test-Aperture/assets/60234076/7f513d49-4eb7-4d40-bb3f-966e4588ac91)
+
+# Search
+
+![Screenshot 2024-02-07 052753](https://github.com/MoeAS/Angular-Test-Aperture/assets/60234076/8c9c5e9c-1e6d-4a0f-b882-6faf53570d2b)
+
+# Artist Info
+
+![Screenshot 2024-02-07 052815](https://github.com/MoeAS/Angular-Test-Aperture/assets/60234076/d76a0335-f032-49e7-947a-6299df740177)
+
+# Register An Artist
+
+![Screenshot 2024-02-07 052830](https://github.com/MoeAS/Angular-Test-Aperture/assets/60234076/cf840d61-a506-4b3f-9318-e0468436d050)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
