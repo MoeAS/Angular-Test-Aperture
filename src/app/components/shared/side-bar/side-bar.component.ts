@@ -13,8 +13,8 @@ export class SideBarComponent {
   openRegisterArtistDialog() {
     const dialogRef = this.dialog.open(RegisterArtistComponent, {
       width: '700px',
+      height: '850px',
       panelClass: 'my-dialog-panel',
-      hasBackdrop: false,
     });
   }
 }

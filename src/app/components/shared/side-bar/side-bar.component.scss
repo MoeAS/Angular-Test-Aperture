@@ -63,7 +63,7 @@ a {
   left: -15em;
   overflow: hidden;
   transition: all 0.3s ease-in;
-  width: 15em;
+  width: 13em;
   height: 100%;
   background: black;
   color: rgba(255, 255, 255, 0.7);
@@ -82,7 +82,7 @@ a {
   left: 0;
   margin: 0;
   padding: 0;
-  width: 15em;
+  width: 13em;
 }
 
 .s-sidebar__nav ul li {
@@ -90,6 +90,8 @@ a {
 }
 
 .s-sidebar__nav-link {
+  transition: 0.4s;
+  cursor: pointer;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -104,6 +106,7 @@ a {
 }
 
 .s-sidebar__nav-link:hover {
+  color: #1ed760;
   background: black;
 }
 
@@ -143,13 +146,13 @@ a {
   .s-sidebar__nav:focus,
   .s-sidebar__trigger:hover + .s-sidebar__nav,
   .s-sidebar__trigger:focus + .s-sidebar__nav {
-    width: 15em;
+    width: 13em;
   }
 }
 
 @media (min-width: 68em) {
   .s-layout__content {
-    margin-left: 15em;
+    margin-left: 13em;
   }
 
   /* Sidebar */
@@ -158,7 +161,7 @@ a {
   }
 
   .s-sidebar__nav {
-    width: 15em;
+    width: 13em;
   }
 
   .s-sidebar__nav ul {

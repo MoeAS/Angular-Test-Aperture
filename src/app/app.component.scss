@@ -4,13 +4,26 @@
   height: 100vh;
 
   #sidebar {
-    width: 200px;
+    width: 1em;
     height: 100%;
-    z-index: 1;
+    z-index: 9999;
+    background: black;
   }
 
   #content {
     flex-grow: 1;
     background: #191919;
+  }
+}
+
+@media (min-width: 42em) {
+  #sidebar {
+    width: 4em !important;
+  }
+}
+
+@media (min-width: 68em) {
+  #sidebar {
+    width: 14em !important;
   }
 }
