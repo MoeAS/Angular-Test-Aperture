@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
 
+## Running the app
+
+To run the application
+
+run on terminal inside the project directory:
+
+    npm i
+if you want to change the spotify credentials, they are found in the environments files.
+
+to run the application just run `ng serve`, if you need to change the port just run `ng serve --port <port number desired>` if you would also like to change the host `ng serve --host <your-local-ip-address-v4>`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

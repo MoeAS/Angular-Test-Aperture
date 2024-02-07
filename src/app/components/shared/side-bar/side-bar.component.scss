@@ -63,7 +63,7 @@ a {
   left: -15em;
   overflow: hidden;
   transition: all 0.3s ease-in;
-  width: 13em;
+  width: 14em;
   height: 100%;
   background: black;
   color: rgba(255, 255, 255, 0.7);
@@ -82,7 +82,7 @@ a {
   left: 0;
   margin: 0;
   padding: 0;
-  width: 13em;
+  width: 14em;
 }
 
 .s-sidebar__nav ul li {
@@ -146,13 +146,13 @@ a {
   .s-sidebar__nav:focus,
   .s-sidebar__trigger:hover + .s-sidebar__nav,
   .s-sidebar__trigger:focus + .s-sidebar__nav {
-    width: 13em;
+    width: 14em;
   }
 }
 
 @media (min-width: 68em) {
   .s-layout__content {
-    margin-left: 13em;
+    margin-left: 14em;
   }
 
   /* Sidebar */
@@ -161,7 +161,7 @@ a {
   }
 
   .s-sidebar__nav {
-    width: 13em;
+    width: 14em;
   }
 
   .s-sidebar__nav ul {
