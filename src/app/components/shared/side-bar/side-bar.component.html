@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <body>
-    <div
-      class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left"
-      style="width: 200px; background: black; color: white"
-      id="mySidebar"
-    >
-      <button
-        class="w3-bar-item w3-button w3-large w3-hide-large"
-        onclick="w3_close()"
-      >
-        Close &times;
-      </button>
-      <img src="../../../../assets/images/spotify-logo.png" class="w3-bar-item">
-      <a [routerLink]="'/home'" class="w3-bar-item w3-button">Home</a>
-      <a [routerLink]="'/search'" class="w3-bar-item w3-button">Search</a>
-      <a (click)="openRegisterArtistDialog()" class="w3-bar-item w3-button">Register an artist</a>
-    </div>
+<div class="s-layout__sidebar">
+  <a class="s-sidebar__trigger">
+    <i class="fa fa-bars"></i>
+  </a>
 
-    <div class="w3-main" style="margin-left: 200px">
-      <div class="w3-teal">
-        <button
-          class="w3-button w3-teal w3-xlarge w3-hide-large"
-          onclick="w3_open()"
-        >
-          &#9776;
-        </button>
-      </div>
-    </div>
-  </body>
-</html>
+  <nav class="s-sidebar__nav">
+    <ul>
+      <li>
+        <img
+          src="../../../../assets/images/spotify-logo.png"
+          class="spotify__img"
+        />
+      </li>
+      <li>
+        <a class="s-sidebar__nav-link" [routerLink]="['/home']">
+          <i class="fa fa-home"></i><em>Home</em>
+        </a>
+      </li>
+      <li>
+        <a class="s-sidebar__nav-link" [routerLink]="['/search']">
+          <i class="fa fa-search"></i><em>Search</em>
+        </a>
+      </li>
+      <li>
+        <a class="s-sidebar__nav-link" href="">
+          <i class="fa fa-id-card"></i><em>Register an artist</em>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

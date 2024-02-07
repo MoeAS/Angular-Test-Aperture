@@ -1,7 +1,7 @@
 h1 {
     color: white;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 p {
@@ -10,3 +10,11 @@ p {
     text-align-last: center;
     margin-top: 10%;
 }
+
+@media screen and (max-width: 671px) {
+    h1 {
+        color: white;
+        margin-top: 70px;
+        margin-left: 40px;
+    }
+  }
