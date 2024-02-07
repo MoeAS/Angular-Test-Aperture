@@ -9,9 +9,14 @@ To run the application
 run on terminal inside the project directory:
 
     npm i
-if you want to change the spotify credentials, they are found in the environments files.
+if you want to change the spotify credentials, they are found in the environments files. Change the client_id and client_secret as show on the spotify developers dashboard settings as shown below for reference.
+
+![Screenshot 2024-02-07 052507](https://github.com/MoeAS/Angular-Test-Aperture/assets/60234076/9786aafd-e25a-4862-8b7c-7b7f42f9332e)
+
 
 to run the application just run `ng serve`, if you need to change the port just run `ng serve --port <port number desired>` if you would also like to change the host `ng serve --host <your-local-ip-address-v4>`
+
+YOU NEED A SPOTIFY ACCOUNT TO LOG IN!
 
 ## Development server
 
